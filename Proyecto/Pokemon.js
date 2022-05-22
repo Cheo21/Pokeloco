@@ -13,6 +13,7 @@ export class Pokemon{
         this.habilidades = json.abilities;
         this.tipos= json.types;
         this.imagen = json.sprites.front_default;
+        
     }
     
 }
