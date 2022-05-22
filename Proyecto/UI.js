@@ -46,8 +46,9 @@ export class UI {
     for (let index = 0; index < pokemon.habilidades.length; index++) {
       const li = document.createElement("li");
       li.textContent= pokemon.habilidades[index].ability.name;
-      li.class+=" list-group-item";
+      li.class+=" list-group-item";debugger;
       habilidades.appendChild(li);
+      
     }
 
     const tipos = document.getElementById("tipos");

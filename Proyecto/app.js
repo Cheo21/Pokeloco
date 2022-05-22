@@ -1,5 +1,5 @@
-import { Pokemon } from "./Pokemon";
-import { UI } from "./UI";
+import { Pokemon } from "./Pokemon.js";
+import { UI } from "./UI.js";
 
 const limit = 11;
 var offset = 0;
@@ -42,16 +42,7 @@ function fetchPokemons(){
         }
     });
 
-    document.getElementById("Anterior").addEventListener("click", ()=>
-    {
-        offset-= (limit+1);
-        fetchPokemon();
-    })
-
-    document.getElementById("Siguiente").addEventListener("click",() =>{
-        offset+= (limit+1);
-        fetchPokemon();
-    })
+    
 
 
     function getPokeInfo(element){
@@ -66,6 +57,20 @@ function fetchPokemons(){
     }
 
 
+    document.getElementById("Anterior").addEventListener("click", ()=>
+    {
+        const ui = new UI();
+        offset-= (limit+1);
+        ui.remove(document.getElementById("pokemon-list"))
+        fetchPokemons();
+    })
+
+    document.getElementById("Siguiente").addEventListener("click",() =>{
+        const ui = new UI();
+        offset+= (limit+1);
+        ui.remove(document.getElementById("pokemon-list"))
+        fetchPokemons();
+    })
     
     document.getElementById("pokemon-list").addEventListener("click", (e) =>{
         const ui = new UI();
