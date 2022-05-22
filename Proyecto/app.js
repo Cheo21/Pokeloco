@@ -1,12 +1,13 @@
+<<<<<<< HEAD
 import { Pokemon } from "./Pokemon.js";
 import { UI } from "./UI.js";
+=======
+import { Pokemon } from "./Pokemon";
+import {UI} from './UI'
+>>>>>>> f0760e2a46e26d295d40929cc8ac3dfea13137ad
 
 const limit = 11;
 var offset = 0;
-
-
-
-
 
 function fetchPokemon(url){
     const ui = new UI();
