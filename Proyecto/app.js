@@ -1,5 +1,5 @@
-import { Pokemon } from "./Pokemon";
-import { UI } from "./UI";
+import { Pokemon } from "./Pokemon.js";
+import { UI } from "./UI.js";
 
 const limit = 11;
 var offset = 0;
