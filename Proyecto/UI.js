@@ -9,7 +9,7 @@ export class UI {
     const pokemonList = document.getElementById("pokemon-list");
     const element = document.createElement("div");
     element.innerHTML = `
-        <div class="card" style="width: 15rem;">
+        <div class="card" style="width: 10rem; margin: 5px">
         <img src="${imagen}" class="card-img-top"  alt="${nombre}">
         <div class="card-body">
         <h5 class="card-title">${id} - ${nombre}</h5>
@@ -36,20 +36,15 @@ export class UI {
         <h5 class="card-title">${pokemon.id} - ${pokemon.nombre}</h5>
         <label for="tipos">Tipos</label>
         <ul id="tipos" class="list-group"></ul>
+        <hr>
         <label for="habilidades">Habilidades</label>
         <ul id="habilidades" class="list-group"></ul>
 
         </div>
         </div>
     `
-    const habilidades = document.getElementById("tipos");
-    for (let index = 0; index < pokemon.habilidades.length; index++) {
-      const li = document.createElement("li");
-      li.textContent= pokemon.habilidades[index].ability.name;
-      li.class+=" list-group-item";debugger;
-      habilidades.appendChild(li);
-      
-    }
+    banner.appendChild(element);
+
 
     const tipos = document.getElementById("tipos");
     for (let index = 0; index < pokemon.tipos.length; index++) {
@@ -58,8 +53,18 @@ export class UI {
       li.class+=" list-group-item";
       tipos.appendChild(li);
     }
+    const habilidades = document.getElementById("habilidades");
+    for (let index = 0; index < pokemon.habilidades.length; index++) {
+      const li = document.createElement("li");
+      li.textContent= pokemon.habilidades[index].ability.name;
+      li.class+=" list-group-item";
+      habilidades.appendChild(li);
+      
+    }
 
-    banner.appendChild(element);
+    
+
+    
   }
 
 

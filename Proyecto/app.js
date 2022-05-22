@@ -1,7 +1,7 @@
 import { Pokemon } from "./Pokemon.js";
 import { UI } from "./UI.js";
 
-const limit = 11;
+const limit = 4;
 var offset = 0;
 
 function fetchPokemon(url){
@@ -28,19 +28,6 @@ function fetchPokemons(){
     .catch(err => console.log(err));
 }
 
-
-
-
-    window.addEventListener("load", ()=>{
-        if(offset == 0){
-        fetchPokemons();
-        offset+=(limit+1);
-        }
-    });
-
-    
-
-
     function getPokeInfo(element){
         const id = element.id;
         const ui = new UI();
@@ -53,19 +40,27 @@ function fetchPokemons(){
     }
 
 
+    window.addEventListener("load", ()=>{
+        if(offset == 0){
+        fetchPokemons();
+        offset+=limit;
+        }
+    });
+
     document.getElementById("Anterior").addEventListener("click", ()=>
     {
-        const ui = new UI();
-        offset-= (limit+1);
-        ui.remove(document.getElementById("pokemon-list"))
-        fetchPokemons();
-    })
+        
+            const ui = new UI();
+            offset-= limit;
+            ui.remove(document.getElementById("pokemon-list"))
+            fetchPokemons();}
+    )
 
     document.getElementById("Siguiente").addEventListener("click",() =>{
         const ui = new UI();
-        offset+= (limit+1);
-        ui.remove(document.getElementById("pokemon-list"))
+        ui.remove(document.getElementById("pokemon-list"));
         fetchPokemons();
+        offset+= limit;
     })
     
     document.getElementById("pokemon-list").addEventListener("click", (e) =>{

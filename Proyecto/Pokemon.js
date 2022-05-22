@@ -8,7 +8,7 @@ export class Pokemon{
      * @param{String} Url del sprite
      */
     constructor(json){
-        this.name= json.name;
+        this.nombre= json.name;
         this.id= json.id;
         this.habilidades = json.abilities;
         this.tipos= json.types;
