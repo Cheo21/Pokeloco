@@ -13,7 +13,7 @@ export class UI {
         <img src="${imagen}" class="card-img-top"  alt="${nombre}">
         <div class="card-body">
         <h5 class="card-title">${id} - ${nombre}</h5>
-        <a href="#" class="btn btn-primary">Información</a>
+        <a href="#" id="${id}" class="btn btn-primary">Información</a>
         </div>
         </div>
         `;
