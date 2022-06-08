@@ -68,14 +68,4 @@ function fetchPokemons(){
         ui.remove(document.getElementById("banner"));
         getPokeInfo(e.target);
     } )
-    
-
-
-
-
-
-
-
-
-
 

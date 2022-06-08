@@ -39,7 +39,6 @@ export class UI {
         <hr>
         <label for="habilidades">Habilidades</label>
         <ul id="habilidades" class="list-group"></ul>
-
         </div>
         </div>
     `
@@ -60,14 +59,6 @@ export class UI {
       li.class+=" list-group-item";
       habilidades.appendChild(li);
       
-    }
-
-    
-
-    
+    } 
   }
-
-
-
-  
 }
